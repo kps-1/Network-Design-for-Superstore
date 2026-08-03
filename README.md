@@ -29,13 +29,17 @@
 - **Результат:** Успешная проверка связности `ping` между устройствами в одной VLAN.
 *(Вставьте скриншоты: конфигурация VLAN на коммутаторе, проверка ping между PCL-3 и PCL-4, Portal и FS и т.д.)*
 
+PCL-3 → PCL-4
+<img width="665" height="225" alt="Тест 1 1" src="https://github.com/user-attachments/assets/7defc753-8bd1-4f8e-9551-31692dbab5e1" />
+PCS-1 → PCS-2
+<img width="622" height="164" alt="Тест 1 4" src="https://github.com/user-attachments/assets/16c8c079-9814-4e32-b2d5-67ac869e8745" />
+
+
 #### 2. Межсетевая маршрутизация
 - На маршрутизаторах `R-HQ` и `R-Darkstore` настроены субинтерфейсы для всех VLAN.
 - Каждый субинтерфейс получил IP-адрес, выступающий в роли шлюза по умолчанию для своей подсети.
 - **Результат:** Устройства из разных VLAN успешно взаимодействуют друг с другом.
 *(Вставьте скриншоты: конфигурация субинтерфейсов на R-HQ, проверка ping между PCI-1 и PCM-1, PCL-3 и PCS-3)*
-<img width="665" height="225" alt="Тест 1 1" src="https://github.com/user-attachments/assets/7defc753-8bd1-4f8e-9551-31692dbab5e1" />
-<img width="622" height="164" alt="Тест 1 4" src="https://github.com/user-attachments/assets/16c8c079-9814-4e32-b2d5-67ac869e8745" />
 
 
 
