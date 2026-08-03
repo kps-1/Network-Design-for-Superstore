@@ -60,8 +60,8 @@
 - На маршрутизаторах `R-HQ` и `R-Darkstore` настроены DHCP-пулы для автоматической раздачи IP-адресов пользователям в VLAN 10, 20, 30, 40.
 - Статические адреса с клиентских машин удалены.
 - **Результат:** Все пользовательские устройства получают настройки сети (IP, маску, шлюз, DNS) автоматически.
-Проверка DHCP на PCI-1 (VLAN 10) <img width="859" height="113" alt="Проверка 1 1" src="https://github.com/user-attachments/assets/9abdc1b7-7458-42cd-bc33-25f9002f2b69" />
-DNS-сервер на PCM-1 <img width="696" height="67" alt="Проверка 2 3" src="https://github.com/user-attachments/assets/8b1501b2-1c68-4753-8e53-3c28d3af4cc9" />
+<img width="859" height="113" alt="Проверка 1 1" src="https://github.com/user-attachments/assets/9abdc1b7-7458-42cd-bc33-25f9002f2b69" />
+<img width="696" height="67" alt="Проверка 2 3" src="https://github.com/user-attachments/assets/8b1501b2-1c68-4753-8e53-3c28d3af4cc9" />
 
 
 
@@ -105,7 +105,14 @@ DNS-сервер на PCM-1 <img width="696" height="67" alt="Проверка 2
 - На **Хосте 1** развернут DNS-сервер (dnsmasq) для домена `practicumsuperstore.ru`.
 - Созданы А-записи для ключевых сервисов: `WEB`, `AD`, `FS`, `mail`.
 - **Результат:** Все хосты синхронизируют время и резолвят внутренние доменные имена.
-*(Вставьте скриншоты: конфигурация `/etc/chrony/chrony.conf`, `/etc/dnsmasq.conf`, вывод `nslookup web.practicumsuperstore.ru`)*
+<img width="920" height="481" alt="Тест 1" src="https://github.com/user-attachments/assets/9c39199a-aa1f-444d-aeca-f60874c15f68" />
+<img width="645" height="131" alt="Тест 2" src="https://github.com/user-attachments/assets/92c38302-b2d6-4f3d-b30e-a6b5979bcfdf" />
+<img width="646" height="226" alt="Тест 3 1" src="https://github.com/user-attachments/assets/040784f8-9a01-4199-9897-2622b6b2fc66" />
+<img width="553" height="220" alt="Тест 3 2" src="https://github.com/user-attachments/assets/d444b708-9b08-4abb-9875-fcdf4012523c" />
+<img width="550" height="138" alt="Тест 4" src="https://github.com/user-attachments/assets/0d3d23b7-5482-4115-8ecc-a10dbe0a1a39" />
+<img width="496" height="177" alt="Тест 5 1" src="https://github.com/user-attachments/assets/417f5021-ded4-4081-9c06-168a6cd03de1" />
+<img width="586" height="181" alt="Тест 5 2" src="https://github.com/user-attachments/assets/fe81234e-f557-476f-be00-81aa70bbb2fa" />
+
 
 #### 2. Автоматизация с Ansible
 - На **Хосте 2** развернут Ansible-контроллер.
@@ -115,7 +122,13 @@ DNS-сервер на PCM-1 <img width="696" height="67" alt="Проверка 2
   - `create_user.yml` — создание пользователя `backup-user`.
   - `configure_backup.yml` — настройка резервного копирования через cron.
 - **Результат:** Управление конфигурацией клиента полностью автоматизировано.
-*(Вставьте скриншоты: содержимое плейбуков, вывод `crontab -l` от пользователя backup-user, содержимое директории `/home/anscfg/backups`)*
+<img width="517" height="129" alt="Тест 1 1" src="https://github.com/user-attachments/assets/78508c09-32d2-425d-91ae-3742cfa10980" />
+<img width="517" height="84" alt="Тест 1 2" src="https://github.com/user-attachments/assets/26442a69-572e-4884-8ed8-b635db14697a" />
+<img width="541" height="212" alt="Тест 2" src="https://github.com/user-attachments/assets/e0a47c93-fbb9-42e1-b369-5d76e63e7843" />
+<img width="642" height="96" alt="Тест 3" src="https://github.com/user-attachments/assets/b9c9c248-470b-4957-8764-16491736a2cf" />
+<img width="643" height="209" alt="Тест 4 1" src="https://github.com/user-attachments/assets/4f55d2b3-e937-449d-b8ec-43c2abc3a347" />
+<img width="576" height="120" alt="Тест 4 2" src="https://github.com/user-attachments/assets/f7895c97-8c47-42c8-98ed-d33b32739f0d" />
+
 
 #### 3. Развертывание почтовой инфраструктуры (Postfix)
 - На **Хосте 1** установлен и настроен почтовый сервер Postfix.
@@ -123,21 +136,29 @@ DNS-сервер на PCM-1 <img width="696" height="67" alt="Проверка 2
 - На **Хосте 3** настроен почтовый клиент.
 - Отправлено и получено тестовое письмо для пользователя `ubuntu`.
 - **Результат:** Почтовый сервер успешно принимает и доставляет письма.
-*(Вставьте скриншоты: конфигурация `/etc/postfix/main.cf`, вывод `nslookup -type=mx mail.practicumsuperstore.ru`, содержимое `/var/log/mail.log`, письмо в `/home/ubuntu/Maildir/new/`)*
+<img width="908" height="245" alt="Тест 1" src="https://github.com/user-attachments/assets/74b7f1cd-c0bb-421d-a5ca-51f789d87f05" />
+<img width="621" height="69" alt="Тест 2 1" src="https://github.com/user-attachments/assets/ea40f43a-21e0-4bab-99fb-f88d279d46d9" />
+<img width="607" height="82" alt="Тест 2 2" src="https://github.com/user-attachments/assets/aef6dcc8-6249-4324-8a06-904700416d47" />
+<img width="680" height="231" alt="Тест 3" src="https://github.com/user-attachments/assets/3ddccf3e-fa7e-4117-8e63-07593c8e6d3b" />
+<img width="791" height="67" alt="Тест 4" src="https://github.com/user-attachments/assets/3f8cf04c-b619-4d1f-a4ec-18e500747c77" />
+<img width="774" height="183" alt="Тест 5" src="https://github.com/user-attachments/assets/fd68c60d-430b-4062-9ddf-2ccb6fa4fda3" />
 
 #### 4. Настройка файлового обмена (FTP)
 - На **Хосте 2** установлен FTP-сервер `vsftpd`.
 - Создан пользователь `ftpuser` и настроена директория `/home/ftpuser/ftp/files`.
 - Настроены параметры для локальных пользователей и возможности записи.
 - **Результат:** Успешная загрузка и скачивание тестового файла с FTP-сервера.
-*(Вставьте скриншоты: конфигурация `/etc/vsftpd.conf`, процесс скачивания файла с клиента)*
+<img width="757" height="511" alt="Тест 1" src="https://github.com/user-attachments/assets/dcfee453-90f6-41b8-8739-16098dbf642a" />
+<img width="665" height="225" alt="Тест 2" src="https://github.com/user-attachments/assets/89a445ca-ceba-418a-a4c2-10b77adedf3c" />
 
 #### 5. Развертывание веб-сервера (Nginx)
 - На **Хосте 2** установлен и настроен веб-сервер Nginx.
 - Настроены кастомные страницы ошибок (404, 500).
 - Настроена базовая аутентификация (HTTP Auth) для директории `/secure`.
 - **Результат:** Веб-сервер доступен, работает аутентификация.
-*(Вставьте скриншоты: работающая страница сайта в браузере, вывод `tail -f /var/log/nginx/access.log` с клиента)*
+<img width="1883" height="1022" alt="Тест 1" src="https://github.com/user-attachments/assets/85c04e41-cedc-4a7b-9436-658e3c16dcda" />
+<img width="643" height="64" alt="Тест 2" src="https://github.com/user-attachments/assets/42c35e1b-a408-4b85-9d50-0505e6123c63" />
+
 
 ---
 
