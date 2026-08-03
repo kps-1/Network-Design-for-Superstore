@@ -60,7 +60,9 @@
 - На маршрутизаторах `R-HQ` и `R-Darkstore` настроены DHCP-пулы для автоматической раздачи IP-адресов пользователям в VLAN 10, 20, 30, 40.
 - Статические адреса с клиентских машин удалены.
 - **Результат:** Все пользовательские устройства получают настройки сети (IP, маску, шлюз, DNS) автоматически.
-![Проверка DHCP на PCI-1 (VLAN 10)] <img width="859" height="113" alt="Проверка 1 1" src="https://github.com/user-attachments/assets/9abdc1b7-7458-42cd-bc33-25f9002f2b69" />
+Проверка DHCP на PCI-1 (VLAN 10) <img width="859" height="113" alt="Проверка 1 1" src="https://github.com/user-attachments/assets/9abdc1b7-7458-42cd-bc33-25f9002f2b69" />
+DNS-сервер на PCM-1 <img width="696" height="67" alt="Проверка 2 3" src="https://github.com/user-attachments/assets/8b1501b2-1c68-4753-8e53-3c28d3af4cc9" />
+
 
 
 #### 4. Доступ в интернет и NAT
@@ -68,19 +70,31 @@
 - Настроены маршруты по умолчанию на обоих маршрутизаторах.
 - Настроен Source NAT (PAT) для всего исходящего трафика из локальных сетей.
 - **Результат:** Все устройства в локальной сети имеют доступ в интернет.
-*(Вставьте скриншоты: конфигурация NAT на R-HQ, проверка ping с PCI-1 до 1.1.1.1, вывод `show ip nat statistics`)*
+<img width="640" height="96" alt="Проверка 1" src="https://github.com/user-attachments/assets/5cd79208-4972-49e9-a812-e785de8ada60" />
+<img width="852" height="329" alt="Проверка 2" src="https://github.com/user-attachments/assets/23f739f1-5dc3-4624-a204-60cd1fe16301" />
+
+
 
 #### 5. Публикация веб-сервера (DNAT)
 - На маршрутизаторе `R-HQ` настроен Static NAT (Port Forwarding) для веб-сервера (`10.10.5.60`).
 - Порт TCP 80 внутреннего сервера опубликован на внешнем IP-адресе через порт 8080.
 - **Результат:** Веб-сервер доступен из интернета по адресу `55.55.55.101:8080`.
-*(Вставьте скриншоты: конфигурация DNAT на R-HQ, проверка `telnet 55.55.55.101 8080`, вывод `show ip nat translations`)*
+<img width="591" height="209" alt="Проверка 1" src="https://github.com/user-attachments/assets/81819f1f-9b59-4abe-a24a-3b89ed18ee40" />
+<img width="577" height="160" alt="Проверка 2" src="https://github.com/user-attachments/assets/475af1c7-9b4b-4394-bcef-3643e790c403" />
+<img width="561" height="161" alt="Проверка 3" src="https://github.com/user-attachments/assets/7ef383c6-7ae4-459d-892e-6eab461e88e8" />
+<img width="658" height="288" alt="Проверка 4" src="https://github.com/user-attachments/assets/c5477ff1-eeaf-41f3-a050-d9d1f20ae4bb" />
+
+
 
 #### 6. Связь между офисами
 - Настроена статическая маршрутизация через провайдера WAN.
 - На маршрутизаторах `R-HQ`, `R-Darkstore` и `WAN` добавлены маршруты до внутренних подсетей другой локации.
 - **Результат:** Устройства из головного офиса и даркстора успешно обмениваются данными.
-*(Вставьте скриншоты: таблица маршрутизации на R-HQ и R-Darkstore, проверка ping между PCI-1 и PCS-3)*
+<img width="922" height="420" alt="R-Darkstore" src="https://github.com/user-attachments/assets/30f3cf70-cc71-455a-8adb-a3c15b260ae1" />
+<img width="877" height="416" alt="R-HQ" src="https://github.com/user-attachments/assets/679a650d-14ff-4b8a-a86f-b905abf37bab" />
+<img width="820" height="354" alt="WAN" src="https://github.com/user-attachments/assets/fd7b60ca-b5a3-462d-9882-333499024ce8" />
+<img width="632" height="161" alt="Проверка 1 1" src="https://github.com/user-attachments/assets/550f9489-6d62-4a17-ade0-f44da26490d3" />
+
 
 ---
 
