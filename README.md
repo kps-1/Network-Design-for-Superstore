@@ -29,11 +29,21 @@
 - **Результат:** Успешная проверка связности `ping` между устройствами в одной VLAN.
 *(Вставьте скриншоты: конфигурация VLAN на коммутаторе, проверка ping между PCL-3 и PCL-4, Portal и FS и т.д.)*
 
-## **PCL-3 → PCL-4** 
+## **VLAN и базовая связность PCL-3 → PCL-4** 
 <img width="665" height="225" alt="Тест 1 1" src="https://github.com/user-attachments/assets/7defc753-8bd1-4f8e-9551-31692dbab5e1" />
 
-## **PCS-1 → PCS-2**
+## **VLAN и базовая связность PCS-1 → PCS-2**
 <img width="622" height="164" alt="Тест 1 4" src="https://github.com/user-attachments/assets/16c8c079-9814-4e32-b2d5-67ac869e8745" />
+
+## **Доступ в интернет и NAT PCL-1 → шлюз**
+<img width="652" height="209" alt="Тест 2 1 1" src="https://github.com/user-attachments/assets/fdc2e0b9-ff6b-4ed6-a955-48c6887a969a" />
+
+## **Доступ в интернет и NAT ping с R-Darkstore до ISP и таблица маршрутизации R-Darkstore**
+<img width="554" height="90" alt="Проверка 1" src="https://github.com/user-attachments/assets/dc3e8809-6652-4d20-9652-33ff2e286b46" />
+<img width="831" height="426" alt="Проверка 2" src="https://github.com/user-attachments/assets/eecbdd87-07bf-4c7d-8ca3-2528670206c0" />
+
+
+
 
 
 #### 2. Межсетевая маршрутизация
